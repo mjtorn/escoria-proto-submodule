@@ -4,8 +4,8 @@ say player player_look_desk:"My desk."
 
 :pick_up
 > [!i/office_key]
-	say player player_find_key:"The key to my office."
-	set_global i/office_key true
+ say player player_find_key:"The key to my office."
+ set_global i/office_key true
 
 :use office_key
 say player player_use_officekey_desk:"It's not the key to my desk."
