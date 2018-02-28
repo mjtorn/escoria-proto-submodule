@@ -5,4 +5,5 @@ change_scene res://game/rooms/002.bridge/main.tscn [door_opened]
 :use office_key
 say player player_pickup_door:"Here goes." [!door_opened]
 set_global door_opened true
+change_scene res://game/rooms/002.bridge/main.tscn
 
