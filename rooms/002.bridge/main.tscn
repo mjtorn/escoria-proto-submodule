@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://globals/scene.gd" type="Script" id=1]
 [ext_resource path="res://game/rooms/002.bridge/00-background.png" type="Texture" id=2]
@@ -8,9 +8,10 @@
 [ext_resource path="res://game/rooms/002.bridge/03-bridge-mid.png" type="Texture" id=6]
 [ext_resource path="res://game/rooms/002.bridge/04-bridge-front.png" type="Texture" id=7]
 [ext_resource path="res://globals/terrain.gd" type="Script" id=8]
-[ext_resource path="res://game/actors/player-char/player.tscn" type="PackedScene" id=9]
-[ext_resource path="res://globals/game.tscn" type="PackedScene" id=10]
-[ext_resource path="res://game/ui/action_menu.tscn" type="PackedScene" id=11]
+[ext_resource path="res://game/rooms/002.bridge/03-bridge-mid.scalemap.png" type="Texture" id=9]
+[ext_resource path="res://game/actors/player-char/player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://globals/game.tscn" type="PackedScene" id=11]
+[ext_resource path="res://game/ui/action_menu.tscn" type="PackedScene" id=12]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -22,6 +23,9 @@ _sections_unfolded = [ "Resource" ]
 [node name="scene" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
 events_path = ""
 
 [node name="background" type="TextureRect" parent="." index="0"]
@@ -110,23 +114,29 @@ _sections_unfolded = [ "Focus" ]
 [node name="terrain" type="Navigation2D" parent="." index="1"]
 
 script = ExtResource( 8 )
-scales = null
+scales = ExtResource( 9 )
 lightmap = null
 bitmaps_scale = Vector2( 1, 1 )
 debug_mode = 1
 lightmap_modulate = Color( 1, 1, 1, 1 )
-scale_min = 0.3
-scale_max = 1.0
+scale_min = 0.1
+scale_max = 0.2
+player_speed_multiplier = 10.0
+player_doubleclick_speed_multiplier = 2.0
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="terrain" index="0"]
 
 navpoly = SubResource( 1 )
 enabled = true
 
-[node name="player" parent="." index="2" instance=ExtResource( 9 )]
+[node name="player" parent="." index="2" instance=ExtResource( 10 )]
 
-[node name="game" parent="." index="3" instance=ExtResource( 10 )]
+position = Vector2( 92, 895.25 )
+scale = Vector2( 0.2, 0.2 )
+z_index = 895
 
-[node name="action_menu" parent="game" index="4" instance=ExtResource( 11 )]
+[node name="game" parent="." index="3" instance=ExtResource( 11 )]
+
+[node name="action_menu" parent="game" index="4" instance=ExtResource( 12 )]
 
 
