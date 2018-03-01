@@ -80,7 +80,7 @@ stretch_mode = 0
 
 position = Vector2( 25.8472, 246.228 )
 script = ExtResource( 6 )
-_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 scales = null
 lightmap = null
 bitmaps_scale = Vector2( 1, 1 )
@@ -101,11 +101,14 @@ _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 position = Vector2( 2013.37, 895.834 )
 z_index = 895
+_sections_unfolded = [ "Z Index" ]
 
 [node name="desk" type="Node2D" parent="." index="3"]
 
+position = Vector2( -1, 0 )
+z_index = 900
 script = ExtResource( 8 )
-_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 animations = null
 speed = 300
 scale_on_map = false
@@ -123,7 +126,7 @@ active = true
 placeholders = {
 
 }
-use_custom_z = false
+use_custom_z = true
 
 [node name="area" type="TextureRect" parent="desk" index="0"]
 
