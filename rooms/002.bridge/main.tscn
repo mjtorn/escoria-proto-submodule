@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://globals/scene.gd" type="Script" id=1]
 [ext_resource path="res://game/rooms/002.bridge/00-background.png" type="Texture" id=2]
@@ -10,23 +10,26 @@
 [ext_resource path="res://globals/terrain.gd" type="Script" id=8]
 [ext_resource path="res://game/rooms/002.bridge/03-bridge-mid.scalemap.png" type="Texture" id=9]
 [ext_resource path="res://game/actors/player-char/player.tscn" type="PackedScene" id=10]
-[ext_resource path="res://globals/game.tscn" type="PackedScene" id=11]
-[ext_resource path="res://game/ui/action_menu.tscn" type="PackedScene" id=12]
+[ext_resource path="res://globals/item.gd" type="Script" id=11]
+[ext_resource path="res://globals/game.tscn" type="PackedScene" id=12]
+[ext_resource path="res://game/ui/action_menu.tscn" type="PackedScene" id=13]
 
 [sub_resource type="NavigationPolygon" id=1]
 
-vertices = PoolVector2Array( 461, 672, 161, 886, 16, 882, 25, 826, 87, 759, 143, 704, 153, 675, 251, 623, 260, 625, 347, 555, 372, 554, 499, 669, 440, 526, 520, 659, 570, 657, 454, 519, 569, 503, 639, 612, 683, 611, 633, 482, 676, 484, 695, 597, 1716, 472, 1794, 481, 1794, 498, 1759, 508, 1652, 501, 1679, 477, 1580, 475, 1649, 472, 1614, 506, 1565, 510, 1526, 458, 1533, 502, 1471, 452, 1510, 509, 1461, 512, 1437, 454, 1356, 442, 1392, 445, 1435, 523, 1395, 523, 1307, 520, 1295, 445, 1228, 442, 1235, 529, 1199, 445, 1132, 448, 1144, 441, 1134, 547, 1111, 538, 993, 453, 1061, 444, 1052, 561, 982, 566, 877, 457, 933, 452, 908, 575, 829, 577, 829, 465, 690, 475, 741, 464, 745, 599 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ), PoolIntArray( 0, 5, 6, 7, 8 ), PoolIntArray( 0, 8, 9, 10 ), PoolIntArray( 11, 0, 10, 12, 13 ), PoolIntArray( 14, 13, 12, 15, 16, 17 ), PoolIntArray( 18, 17, 16, 19, 20, 21 ), PoolIntArray( 22, 23, 24, 25, 26, 27 ), PoolIntArray( 28, 29, 27, 26, 30, 31 ), PoolIntArray( 32, 28, 31, 33 ), PoolIntArray( 34, 32, 33, 35, 36, 37 ), PoolIntArray( 38, 39, 37, 36, 40, 41, 42, 43 ), PoolIntArray( 44, 43, 42, 45, 46 ), PoolIntArray( 47, 48, 46, 45, 49, 50 ), PoolIntArray( 51, 52, 47, 50, 53, 54 ), PoolIntArray( 55, 56, 51, 54, 57, 58, 59 ), PoolIntArray( 60, 61, 59, 58, 62, 21, 20 ) ]
-outlines = [ PoolVector2Array( 25, 826, 87, 759, 143, 704, 153, 675, 251, 623, 260, 625, 347, 555, 372, 554, 440, 526, 454, 519, 569, 503, 633, 482, 676, 484, 690, 475, 741, 464, 829, 465, 877, 457, 933, 452, 993, 453, 1061, 444, 1132, 448, 1144, 441, 1199, 445, 1228, 442, 1295, 445, 1356, 442, 1392, 445, 1437, 454, 1471, 452, 1526, 458, 1580, 475, 1649, 472, 1679, 477, 1716, 472, 1794, 481, 1794, 498, 1759, 508, 1652, 501, 1614, 506, 1565, 510, 1533, 502, 1510, 509, 1461, 512, 1435, 523, 1395, 523, 1307, 520, 1235, 529, 1134, 547, 1111, 538, 1052, 561, 982, 566, 908, 575, 829, 577, 745, 599, 695, 597, 683, 611, 639, 612, 570, 657, 520, 659, 499, 669, 461, 672, 161, 886, 16, 882 ) ]
+vertices = PoolVector2Array( 129.666, 875.67, -34.8265, 882.027, -45.9159, 808.92, 73.2952, 744.554, 461, 672, 104.715, 698.464, 145.376, 665.884, 251, 623, 260, 625, 347, 555, 372, 554, 499, 669, 440, 526, 520, 659, 570, 657, 454, 519, 569, 503, 639, 612, 683, 611, 633, 482, 676, 484, 695, 597, 1716, 472, 1794, 481, 1794, 498, 1759, 508, 1652, 501, 1680.33, 468.018, 1525.08, 453.714, 1590.69, 455.304, 1651.69, 461.661, 1614, 506, 1565, 510, 1533, 502, 1475.18, 451.33, 1510, 509, 1461, 512, 1437, 454, 1356, 442, 1392, 445, 1435, 523, 1395, 523, 1307, 520, 1295, 445, 1228, 442, 1235, 529, 1199, 445, 1132, 448, 1144, 441, 1134, 547, 1111, 538, 993, 453, 1061, 444, 1052, 561, 982, 566, 877, 457, 933, 452, 908, 575, 829, 577, 829, 465, 690, 475, 741, 464, 745, 599 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 4, 3, 5, 6, 7, 8 ), PoolIntArray( 4, 8, 9, 10 ), PoolIntArray( 11, 4, 10, 12, 13 ), PoolIntArray( 14, 13, 12, 15, 16, 17 ), PoolIntArray( 18, 17, 16, 19, 20, 21 ), PoolIntArray( 22, 23, 24, 25, 26, 27 ), PoolIntArray( 28, 29, 30, 27, 26, 31, 32, 33 ), PoolIntArray( 34, 28, 33, 35, 36, 37 ), PoolIntArray( 38, 39, 37, 36, 40, 41, 42, 43 ), PoolIntArray( 44, 43, 42, 45, 46 ), PoolIntArray( 47, 48, 46, 45, 49, 50 ), PoolIntArray( 51, 52, 47, 50, 53, 54 ), PoolIntArray( 55, 56, 51, 54, 57, 58, 59 ), PoolIntArray( 60, 61, 59, 58, 62, 21, 20 ) ]
+outlines = [ PoolVector2Array( -45.9159, 808.92, 73.2952, 744.554, 104.715, 698.464, 145.376, 665.884, 251, 623, 260, 625, 347, 555, 372, 554, 440, 526, 454, 519, 569, 503, 633, 482, 676, 484, 690, 475, 741, 464, 829, 465, 877, 457, 933, 452, 993, 453, 1061, 444, 1132, 448, 1144, 441, 1199, 445, 1228, 442, 1295, 445, 1356, 442, 1392, 445, 1437, 454, 1475.18, 451.33, 1525.08, 453.714, 1590.69, 455.304, 1651.69, 461.661, 1680.33, 468.018, 1716, 472, 1794, 481, 1794, 498, 1759, 508, 1652, 501, 1614, 506, 1565, 510, 1533, 502, 1510, 509, 1461, 512, 1435, 523, 1395, 523, 1307, 520, 1235, 529, 1134, 547, 1111, 538, 1052, 561, 982, 566, 908, 575, 829, 577, 745, 599, 695, 597, 683, 611, 639, 612, 570, 657, 520, 659, 499, 669, 461, 672, 129.666, 875.67, -34.8265, 882.027 ) ]
 _sections_unfolded = [ "Resource" ]
 
 [node name="scene" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_vertical_guides_": [  ]
 }
-events_path = ""
+events_path = "res://game/rooms/002.bridge/main.esc"
+zoom_height_pixels = 1200
 
 [node name="background" type="TextureRect" parent="." index="0"]
 
@@ -117,26 +120,149 @@ script = ExtResource( 8 )
 scales = ExtResource( 9 )
 lightmap = null
 bitmaps_scale = Vector2( 1, 1 )
-debug_mode = 1
+debug_mode = 0
 lightmap_modulate = Color( 1, 1, 1, 1 )
-scale_min = 0.1
-scale_max = 0.2
+scale_min = 0.2
+scale_max = 0.3
 player_speed_multiplier = 10.0
 player_doubleclick_speed_multiplier = 2.0
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="terrain" index="0"]
 
+position = Vector2( 79.924, -23.363 )
+scale = Vector2( 1.32855, 1.54502 )
 navpoly = SubResource( 1 )
 enabled = true
 
 [node name="player" parent="." index="2" instance=ExtResource( 10 )]
 
-position = Vector2( 92, 895.25 )
-scale = Vector2( 0.2, 0.2 )
-z_index = 895
+position = Vector2( 179.169, 1301.63 )
+scale = Vector2( 0.3, 0.3 )
+z_index = 1301
 
-[node name="game" parent="." index="3" instance=ExtResource( 11 )]
+[node name="zoom1200" type="TextureButton" parent="." index="3"]
 
-[node name="action_menu" parent="game" index="4" instance=ExtResource( 12 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 330.0
+margin_top = 1024.0
+margin_right = 375.0
+margin_bottom = 1064.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+script = ExtResource( 11 )
+_sections_unfolded = [ "Textures" ]
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = "Zoom 1200"
+action = ""
+events_path = "res://game/rooms/002.bridge/zoom1200.esc"
+global_id = ""
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
+
+[node name="zoom1080" type="TextureButton" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 386.0
+margin_top = 1104.0
+margin_right = 426.0
+margin_bottom = 1144.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+script = ExtResource( 11 )
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = "Zoom 1080"
+action = ""
+events_path = "res://game/rooms/002.bridge/zoom1080.esc"
+global_id = ""
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
+
+[node name="zoom720" type="TextureButton" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 482.0
+margin_top = 1011.0
+margin_right = 522.0
+margin_bottom = 1051.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+script = ExtResource( 11 )
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = "Zoom 720"
+action = ""
+events_path = "res://game/rooms/002.bridge/zoom720.esc"
+global_id = ""
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
+
+[node name="game" parent="." index="6" instance=ExtResource( 12 )]
+
+[node name="action_menu" parent="game" index="4" instance=ExtResource( 13 )]
 
 

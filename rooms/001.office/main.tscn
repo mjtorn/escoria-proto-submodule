@@ -23,6 +23,7 @@ outlines = [ PoolVector2Array( 1327, 506, 1954, 508, 2039, 700, -0.241604, 706.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Z Index" ]
 events_path = "res://game/rooms/001.office/main.esc"
+zoom_height_pixels = null
 
 [node name="background" type="TextureRect" parent="." index="0"]
 
