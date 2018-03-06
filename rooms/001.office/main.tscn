@@ -251,8 +251,8 @@ group = null
 
 [node name="interact_pos" type="Position2D" parent="bhbook" index="1"]
 
-visible = false
-position = Vector2( -176, 446 )
+position = Vector2( 2694.39, 768.409 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="grail" type="TextureButton" parent="." index="6"]
 
