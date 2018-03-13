@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://globals/scene.gd" type="Script" id=1]
 [ext_resource path="res://game/rooms/001.office/00-Background.png" type="Texture" id=2]
@@ -9,8 +9,7 @@
 [ext_resource path="res://game/actors/player-char/player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://globals/item.gd" type="Script" id=8]
 [ext_resource path="res://game/rooms/001.office/03-desk.crop.png" type="Texture" id=9]
-[ext_resource path="res://globals/game.tscn" type="PackedScene" id=10]
-[ext_resource path="res://game/ui/action_menu.tscn" type="PackedScene" id=11]
+[ext_resource path="res://globals/game_am.tscn" type="PackedScene" id=10]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -18,7 +17,7 @@ vertices = PoolVector2Array( 1122.3, 623.08, 2039, 700, -0.241604, 706.083, 608.
 polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 1, 0, 6 ), PoolIntArray( 7, 4, 6, 8 ), PoolIntArray( 3, 2, 7, 8 ) ]
 outlines = [ PoolVector2Array( 1327, 506, 1954, 508, 2039, 700, -0.241604, 706.083, 55.5653, 497.711 ), PoolVector2Array( 608.146, 618.757, 1122.3, 623.08, 1120.47, 529.702, 609.976, 533.16 ) ]
 
-[node name="scene" type="Node2D"]
+[node name="scene" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Z Index" ]
@@ -251,8 +250,8 @@ group = null
 
 [node name="interact_pos" type="Position2D" parent="bhbook" index="1"]
 
-position = Vector2( 2694.39, 768.409 )
-_sections_unfolded = [ "Transform" ]
+visible = false
+position = Vector2( -176, 446 )
 
 [node name="grail" type="TextureButton" parent="." index="6"]
 
@@ -387,7 +386,5 @@ use_custom_z = false
 position = Vector2( 131.139, 527.571 )
 
 [node name="game" parent="." index="9" instance=ExtResource( 10 )]
-
-[node name="action_menu" parent="game" index="4" instance=ExtResource( 11 )]
 
 
