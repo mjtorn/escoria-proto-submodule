@@ -1,12 +1,6 @@
 :pick_up
 say player player_pickup_door:"It's locked." [!door_opened]
-
-:use
-> [i/office_key]
- say player player_pickup_door:"Here goes." [!door_opened]
- set_global door_opened true
-
-say player player_pickup_door:"It's locked." [!i/office_key]
+change_scene res://game/rooms/002.bridge/main.tscn [door_opened]
 
 :use office_key
 say player player_pickup_door:"Here goes." [!door_opened]
