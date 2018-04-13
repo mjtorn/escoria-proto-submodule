@@ -386,5 +386,5 @@ use_custom_z = false
 position = Vector2( 131.139, 527.571 )
 
 [node name="game" parent="." index="9" instance=ExtResource( 10 )]
-
+fallbacks_path = "res://game/fallbacks.esc"
 
