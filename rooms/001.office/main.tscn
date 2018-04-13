@@ -2,7 +2,7 @@
 
 [ext_resource path="res://globals/scene.gd" type="Script" id=1]
 [ext_resource path="res://game/rooms/001.office/00-Background.png" type="Texture" id=2]
-[ext_resource path="res://globals/background.gd" type="Script" id=3]
+[ext_resource path="res://globals/background_area.gd" type="Script" id=3]
 [ext_resource path="res://game/rooms/001.office/01-rear-wall.png" type="Texture" id=4]
 [ext_resource path="res://game/rooms/001.office/02-objects.png" type="Texture" id=5]
 [ext_resource path="res://globals/terrain.gd" type="Script" id=6]
@@ -18,65 +18,28 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 1, 0, 6 ), PoolIntA
 outlines = [ PoolVector2Array( 1327, 506, 1954, 508, 2039, 700, -0.241604, 706.083, 55.5653, 497.711 ), PoolVector2Array( 608.146, 618.757, 1122.3, 623.08, 1120.47, 529.702, 609.976, 533.16 ) ]
 
 [node name="scene" type="Node2D" index="0"]
-
 script = ExtResource( 1 )
 _sections_unfolded = [ "Z Index" ]
 events_path = "res://game/rooms/001.office/main.esc"
 
-[node name="background" type="TextureRect" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 2060.0
-margin_bottom = 720.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 2
-size_flags_vertical = 2
+[node name="background" type="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )
-stretch_mode = 0
+centered = false
 script = ExtResource( 3 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Rect" ]
 action = "walk"
 
-[node name="rear-wall" type="TextureRect" parent="background" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+[node name="rear-wall" type="Sprite" parent="." index="1"]
 texture = ExtResource( 4 )
-stretch_mode = 0
+centered = false
 _sections_unfolded = [ "Anchor" ]
 
-[node name="objects" type="TextureRect" parent="background" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+[node name="objects" type="Sprite" parent="." index="2"]
 texture = ExtResource( 5 )
-stretch_mode = 0
+centered = false
 
-[node name="terrain" type="Navigation2D" parent="." index="1"]
-
+[node name="terrain" type="Navigation2D" parent="." index="3"]
+editor/display_folded = true
 position = Vector2( 25.8472, 246.228 )
 script = ExtResource( 6 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
@@ -91,21 +54,19 @@ player_speed_multiplier = 1.0
 player_doubleclick_speed_multiplier = 1.5
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="terrain" index="0"]
-
 position = Vector2( -6.32861, -284.256 )
 scale = Vector2( 1.48697, 1.57339 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
-[node name="player" parent="." index="2" instance=ExtResource( 7 )]
-
+[node name="player" parent="." index="4" instance=ExtResource( 7 )]
 position = Vector2( 2013.37, 895.834 )
 z_index = 895
 _sections_unfolded = [ "Z Index" ]
 
-[node name="desk" type="Node2D" parent="." index="3"]
-
+[node name="desk" type="Node2D" parent="." index="5"]
+editor/display_folded = true
 position = Vector2( -1, 0 )
 z_index = 900
 script = ExtResource( 8 )
@@ -130,7 +91,6 @@ placeholders = {
 use_custom_z = true
 
 [node name="area" type="TextureRect" parent="desk" index="0"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -140,6 +100,7 @@ margin_top = 575.0
 margin_right = 1691.0
 margin_bottom = 935.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -148,7 +109,6 @@ texture = ExtResource( 9 )
 stretch_mode = 0
 
 [node name="animation" type="AnimationPlayer" parent="desk" index="1"]
-
 root_node = NodePath("..")
 autoplay = ""
 playback_process_mode = 1
@@ -157,11 +117,10 @@ playback_speed = 1.0
 blend_times = [  ]
 
 [node name="interact_pos" type="Position2D" parent="desk" index="2"]
-
 position = Vector2( 1346.17, 972.049 )
 
-[node name="books" type="TextureButton" parent="." index="4"]
-
+[node name="books" type="TextureButton" parent="." index="6"]
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -171,6 +130,7 @@ margin_top = 325.0
 margin_right = 2620.0
 margin_bottom = 404.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -201,11 +161,10 @@ placeholders = {
 use_custom_z = false
 
 [node name="interact_pos" type="Position2D" parent="books" index="0"]
-
 position = Vector2( -35, 445.405 )
 
-[node name="bhbook" type="Node2D" parent="." index="5"]
-
+[node name="bhbook" type="Node2D" parent="." index="7"]
+editor/display_folded = true
 script = ExtResource( 8 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility" ]
 animations = null
@@ -228,7 +187,6 @@ placeholders = {
 use_custom_z = false
 
 [node name="area" type="TextureButton" parent="bhbook" index="0"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -238,6 +196,7 @@ margin_top = 353.0
 margin_right = 2563.0
 margin_bottom = 393.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -249,30 +208,25 @@ shortcut = null
 group = null
 
 [node name="interact_pos" type="Position2D" parent="bhbook" index="1"]
-
 visible = false
 position = Vector2( -176, 446 )
 
-[node name="grail" type="TextureButton" parent="." index="6"]
-
+[node name="grail" type="TextureRect" parent="." index="8"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 2436.0
-margin_top = 457.0
-margin_right = 2512.0
-margin_bottom = 525.0
+margin_left = 2436.26
+margin_top = 457.99
+margin_right = 2515.26
+margin_bottom = 526.99
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+stretch_mode = 0
 script = ExtResource( 8 )
 animations = null
 speed = 300
@@ -294,11 +248,9 @@ placeholders = {
 use_custom_z = false
 
 [node name="interact_pos" type="Position2D" parent="grail" index="0"]
-
 position = Vector2( -114.61, 308.883 )
 
-[node name="radio" type="TextureButton" parent="." index="7"]
-
+[node name="radio" type="TextureButton" parent="." index="9"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -308,6 +260,7 @@ margin_top = 540.0
 margin_right = 2612.0
 margin_bottom = 629.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -338,11 +291,9 @@ placeholders = {
 use_custom_z = false
 
 [node name="interact_pos" type="Position2D" parent="radio" index="0"]
-
 position = Vector2( -63, 250 )
 
-[node name="door" type="TextureButton" parent="." index="8"]
-
+[node name="door" type="TextureButton" parent="." index="10"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -352,6 +303,7 @@ margin_top = 237.0
 margin_right = 455.0
 margin_bottom = 727.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -382,9 +334,8 @@ placeholders = {
 use_custom_z = false
 
 [node name="interact_pos" type="Position2D" parent="door" index="0"]
-
 position = Vector2( 131.139, 527.571 )
 
-[node name="game" parent="." index="9" instance=ExtResource( 10 )]
+[node name="game" parent="." index="11" instance=ExtResource( 10 )]
 fallbacks_path = "res://game/fallbacks.esc"
 
