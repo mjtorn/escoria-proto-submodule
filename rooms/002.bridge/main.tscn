@@ -7,11 +7,11 @@
 [ext_resource path="res://game/rooms/002.bridge/02-bridge-back.png" type="Texture" id=5]
 [ext_resource path="res://game/rooms/002.bridge/03-bridge-mid.png" type="Texture" id=6]
 [ext_resource path="res://game/rooms/002.bridge/04-bridge-front.png" type="Texture" id=7]
-[ext_resource path="res://globals/terrain.gd" type="Script" id=8]
-[ext_resource path="res://game/rooms/002.bridge/03-bridge-mid.scalemap.png" type="Texture" id=9]
-[ext_resource path="res://game/actors/player-char/player.tscn" type="PackedScene" id=10]
-[ext_resource path="res://game/actors/helga/helga.tscn" type="PackedScene" id=11]
-[ext_resource path="res://globals/item.gd" type="Script" id=12]
+[ext_resource path="res://globals/exit.gd" type="Script" id=8]
+[ext_resource path="res://globals/terrain.gd" type="Script" id=9]
+[ext_resource path="res://game/rooms/002.bridge/03-bridge-mid.scalemap.png" type="Texture" id=10]
+[ext_resource path="res://game/actors/player-char/player.tscn" type="PackedScene" id=11]
+[ext_resource path="res://game/actors/helga/helga.tscn" type="PackedScene" id=12]
 [ext_resource path="res://game/actors/helga/helga_anims.gd" type="Script" id=13]
 [ext_resource path="res://globals/game_am.tscn" type="PackedScene" id=14]
 
@@ -125,10 +125,35 @@ size_flags_vertical = 1
 texture = ExtResource( 7 )
 stretch_mode = 0
 
-[node name="terrain" type="Navigation2D" parent="." index="1"]
+[node name="to-office" type="TextureRect" parent="." index="1"]
 
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 1306.0
+margin_right = 262.0
+margin_bottom = 1350.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch_mode = 0
 script = ExtResource( 8 )
-scales = ExtResource( 9 )
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+events_path = "res://game/rooms/002.bridge/exit.to-office.esc"
+global_id = "exit.to-office"
+tooltip = "To office"
+
+[node name="terrain" type="Navigation2D" parent="." index="2"]
+
+script = ExtResource( 9 )
+scales = ExtResource( 10 )
 lightmap = null
 bitmaps_scale = Vector2( 1, 1 )
 debug_mode = 0
@@ -145,18 +170,17 @@ scale = Vector2( 1.32855, 1.54502 )
 navpoly = SubResource( 1 )
 enabled = true
 
-[node name="player" parent="." index="2" instance=ExtResource( 10 )]
+[node name="player" parent="." index="3" instance=ExtResource( 11 )]
 
 position = Vector2( 179.169, 1301.63 )
 scale = Vector2( 0.3, 0.3 )
 z_index = 1301
 _sections_unfolded = [ "Transform" ]
 
-[node name="helga" parent="." index="3" instance=ExtResource( 11 )]
+[node name="helga" parent="." index="4" instance=ExtResource( 12 )]
 
 position = Vector2( 1411.46, 842.666 )
 scale = Vector2( 0.2, 0.2 )
-script = ExtResource( 12 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 animations = ExtResource( 13 )
 scale_on_map = true
@@ -180,6 +204,6 @@ use_custom_z = true
 
 position = Vector2( -160.711, -25.2434 )
 
-[node name="game" parent="." index="4" instance=ExtResource( 14 )]
+[node name="game" parent="." index="5" instance=ExtResource( 14 )]
 
 
