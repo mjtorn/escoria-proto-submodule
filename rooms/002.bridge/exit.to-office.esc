@@ -1,0 +1,4 @@
+:exit_scene
+set_global last_exit bridge_left
+change_scene res://game/rooms/001.office/main.tscn
+
